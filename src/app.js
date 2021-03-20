@@ -6,6 +6,11 @@ const app =express()
 
 //Configurando el server para leer objetos Json desde el cliente
 app.use(express.json())
+
+//Configurando el server para leer objetos Url Encoded desde el cliente
+app.use(express.urlencoded({extended:true}))
+
+
 //Exponemos la carpeta Public al Cliente
 app.use(express.static(path.resolve(__dirname,'./public')))
 
